@@ -63,11 +63,12 @@ cf:
       password: ${providers.cf.account.password:}
 
 kubernetes:
-  enabled: ${providers.kubernetes.enabled:false}
+  enabled: true
   accounts:
-    - name: ${providers.kubernetes.primaryCredentials.name}
+    - name: kubesolo
+	  kubeconfigFile: /opt/spinnaker/config/kubeconfig
       dockerRegistries:
-        - accountName: ${providers.kubernetes.primaryCredentials.dockerRegistryAccount}
+        - accountName: docker-hub
 
 openstack:
   enabled: ${providers.openstack.enabled:false}
@@ -93,12 +94,14 @@ openstack:
         pollInterval: 5
 
 dockerRegistry:
-  enabled: ${providers.dockerRegistry.enabled:false}
+  enabled: true
   accounts:
-    - name: ${providers.dockerRegistry.primaryCredentials.name}
-      address: ${providers.dockerRegistry.primaryCredentials.address}
-      username: ${providers.dockerRegistry.primaryCredentials.username:}
-      passwordFile: ${providers.dockerRegistry.primaryCredentials.passwordFile}
+    - name: docker-hub
+      address: https://hub.docker.com
+      username: cdongsi
+      password: TODO
+	  repositories:
+		  - library/nginx
 
 credentials:
   primaryAccountTypes: ${providers.aws.primaryCredentials.name}, ${providers.google.primaryCredentials.name}, ${providers.cf.primaryCredentials.name}, ${providers.azure.primaryCredentials.name}
