@@ -12,22 +12,17 @@ default:
 kubernetes:
   enabled: true
   accounts:
-    - name: my-kubernetes-account
-      dockerRegistries: # WARNING! only include configured accounts here
-        - accountName: my-gcr-account
-        - accountName: my-docker-account 
+    - name: kube-aws-SpinnakerTest-cluster
+      dockerRegistries: 
+        - accountName: docker-hub 
 
 dockerRegistry:
   enabled: true
   accounts:
-    - name: my-gcr-account
-      address: https://gcr.io
-      username: _json_key # Don't edit
-      passwordFile: /root/.kube/account.json # Don't edit
-      repositories:
-        - # the names of your GCR images (<project>/<image>)
-    - name: my-docker-account
-      address: https://index.docker.io
+    - name: docker-hub
+      address: https://hub.docker.com
+	  username: cdongsi
+	  password: TODO
       repositories:
         - library/nginx
 

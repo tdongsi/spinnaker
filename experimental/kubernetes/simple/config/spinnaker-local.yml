@@ -74,7 +74,7 @@ services:
 
     # If using storage bucket persistence (gcs or s3), specify the bucket here
     # disable cassandra and enable the storage service below.
-    storage_bucket: # Needs to be a globally unique name. Pick something clever.
+    storage_bucket: testspinnaker
     bucket_root: front50
 
     cassandra:
@@ -85,7 +85,7 @@ services:
       enabled: false # Enable me
       project: # Set me
     s3:
-      enabled: false # Or me
+      enabled: true # Or me
 
   gate:
     host: spin-gate.spinnaker.svc.cluster.local
