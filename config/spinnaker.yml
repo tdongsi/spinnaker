@@ -104,19 +104,19 @@ services:
     # To use a cloud storage bucket on Amazon S3 or Google Cloud Storage instead
     # of cassandra, set the storage_bucket, disable cassandra, and enable one of
     # the service providers.
-    storage_bucket: testspinnaker
+    storage_bucket: ${SPINNAKER_DEFAULT_STORAGE_BUCKET:}
     # (GCS Only) Location for bucket.
     bucket_location:
     bucket_root: front50
 
     cassandra:
-      enabled: false
+      enabled: true
     redis:
       enabled: false
     gcs:
       enabled: false
     s3:
-      enabled: true
+      enabled: false
 
   gate:
     host: ${services.default.host}
