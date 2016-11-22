@@ -65,8 +65,7 @@ cf:
 kubernetes:
   enabled: true
   accounts:
-    - name: kubesolo
-	  kubeconfigFile: /opt/spinnaker/config/kubeconfig
+    - name: kube-aws-SpinnakerTest-cluster
       dockerRegistries:
         - accountName: docker-hub
 
