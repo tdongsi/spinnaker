@@ -21,8 +21,8 @@ dockerRegistry:
   accounts:
     - name: docker-hub
       address: https://hub.docker.com
-	  username: cdongsi
-	  password: TODO
+      username: cdongsi
+      password: TODO
       repositories:
         - library/nginx
 
